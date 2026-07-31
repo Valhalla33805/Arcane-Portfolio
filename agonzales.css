@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* --- SMOOTH THEME TRANSITION --- */
+body, 
+.journal, 
+.enter-btn, 
+.submit-btn, 
+.nav-bar button, 
+#mute-btn, 
+#theme-btn {
+    transition: background 1s ease-in-out, 
+                color 1s ease-in-out, 
+                border-color 1s ease-in-out, 
+                box-shadow 1s ease-in-out !important;
+}
+
+body {
+    margin: 0; height: 100vh;
+    background: url('forestbg.jfif') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Cinzel', serif;
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+    transition: background 1.2s ease-in-out;
+    cursor: auto; /* Fallback cursor */
+}
+
+/* Night Mode Overrides */
+body.night-mode {
+    background: url('pics/nightbg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+body.night-mode .journal {
+    background: rgba(15, 20, 30, 0.95);
+    border: 8px ridge #2b4c7e;
+    color: #c5d8ff;
+}
+
+body.night-mode .nav-bar {
+    border-bottom: 2px solid #5790ff;
+}
+
+body.night-mode .nav-bar button, 
+body.night-mode h2, 
+body.night-mode h3, 
+body.night-mode .journal-footer {
+    color: #5790ff !important;
+    text-shadow: 0 0 8px rgba(87, 144, 255, 0.6);
+}
+
+body.night-mode .submit-btn,
+body.night-mode .enter-btn {
+    background: rgba(20, 35, 60, 0.9);
+    border: 2px solid #5790ff;
+    color: #5790ff;
+    box-shadow: 0 0 15px rgba(87, 144, 255, 0.4);
+}
+
+body.night-mode .submit-btn:hover,
+body.night-mode .enter-btn:hover {
+    background: #5790ff;
+    color: #0f141e;
+    box-shadow: 0 0 30px rgba(87, 144, 255, 0.9);
+}
+
+/* --- LANDING SCREEN STYLES --- */
+#landing-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('pics/cave.jfif') no-repeat center center;
+    background-size: cover;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    z-index: 2000;
+    transition: opacity 1.5s ease-in-out, visibility 1.5s;
+}
+
+.landing-title {
+    color: #d4af37;
+    font-size: 4rem;
+    text-shadow: 0 0 20px #000;
+    margin-bottom: 20px;
+}
+
+.enter-btn {
+    background: rgba(30, 25, 20, 0.9);
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    padding: 20px 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 0 5px #d4af37;
+}
+
+.enter-btn:hover {
+    background: #d4af37;
+    color: #2d2319;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+}
+
+.hide-landing {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none;
+}
+
+/* --- JOURNAL STYLES --- */
+.journal {
+    width: 850px; height: 550px;
+    background: rgba(30, 25, 20, 0.9);
+    border: 8px ridge #4e342e;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+    color: #e0d8c3;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-bar { grid-column: span 2; border-bottom: 2px solid #d4af37; padding-bottom: 10px; margin-bottom: 20px; }
+.nav-bar button { background: none; border: none; color: #d4af37; font-family: 'Cinzel'; cursor: pointer; margin-right: 20px; font-size: 1.2rem; }
+.nav-bar button:hover { text-shadow: 0 0 10px #d4af37; }
+
+.wizard-container { 
+    display: flex; align-items: center; justify-content: center;
+    animation: float 3s ease-in-out infinite; 
+    cursor: pointer;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+#display-area {
+    overflow-y: auto;
+    max-height: 380px;
+    padding-right: 15px;
+}
+#display-area::-webkit-scrollbar { width: 8px; }
+#display-area::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+#display-area::-webkit-scrollbar-thumb { background: #4e342e; border: 1px solid #d4af37; }
+
+/* Force No-Scroll for Contacts */
+#display-area.no-scroll {
+    overflow-y: visible;
+    max-height: none;
+    padding-right: 0;
+}
+/* --- CUSTOM MAGICAL CURSOR --- */
+/* --- CUSTOM MAGICAL CURSOR --- */
+body, button, input, textarea, a, select {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 4V2'></path><path d='M15 16v-2'></path><path d='M8 9h2'></path><path d='M20 9h2'></path><path d='M17.8 11.8L19 13'></path><path d='M11 7l9 9'></path><path d='M3 21l7-7'></path></svg>") 0 0, auto !important;
+}
+
+/* --- MAGICAL PAGE TRANSITION FADE --- */
+.page-fade {
+    animation: pageTurn 0.4s ease-in-out;
+}
+
+@keyframes pageTurn {
+    0% { opacity: 0; transform: scale(0.98) translateY(5px); filter: blur(2px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+/* --- SPARKLE TRAIL PARTICLE --- */
+.sparkle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #d4af37;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 8px #d4af37, 0 0 12px #fff;
+    animation: fadeSparkle 0.6s forwards linear;
+    z-index: 9999;
+}
+
+@keyframes fadeSparkle {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0) translateY(15px); opacity: 0; }
+}
+
+/* --- CLEAN FORM INPUT STYLING --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+label {
+    font-size: 0.8rem;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #d4af37;
+    color: #e0d8c3;
+    padding: 6px 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 60px;
+    resize: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+/* --- ARCANE SUBMIT BUTTON STYLING --- */
+.submit-btn {
+    background: rgba(30, 25, 20, 0.9);
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 0 4px #d4af37;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #d4af37;
+    color: #2d2319;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    text-shadow: none;
+}
+
+.journal-footer {
+    grid-column: span 2;
+    text-align: center;
+    border-top: 1px solid #d4af37;
+    padding-top: 10px;
+    color: #d4af37;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Music Player & Control Buttons */
+.music-player {
+    position: fixed; bottom: 20px; right: 20px;
+    background: rgba(30, 25, 20, 0.9);
+    border: 2px solid #d4af37;
+    padding: 5px 10px; border-radius: 5px; z-index: 500;
+}
+
+.music-label {
+    color: #d4af37; 
+    font-size: 0.7rem; 
+    margin: 0;
+}
+
+#mute-btn {
+    position: fixed; top: 20px; right: 20px;
+    background: rgba(30, 25, 20, 0.8);
+    border: 2px solid #d4af37; color: #d4af37;
+    padding: 10px; cursor: pointer; font-size: 1.2rem;
+    z-index: 3000; border-radius: 5px;
+}
+#mute-btn:hover { background: #d4af37; color: #2d2319; }
+
+#theme-btn {
+    position: fixed; top: 20px; right: 75px;
+    background: rgba(30, 25, 20, 0.8);
+    border: 2px solid #d4af37; color: #d4af37;
+    padding: 10px; cursor: pointer; font-size: 1.2rem;
+    z-index: 3000; border-radius: 5px;
+}
+#theme-btn:hover { background: #d4af37; color: #2d2319; }
+
+/* Falling Leaves Animation */
+.leaf {
+    position: fixed; top: -30px; width: 20px; height: 20px;
+    background-color: #d4af37; opacity: 0.6;
+    border-radius: 0 50% 0 50%;
+    animation: fall linear infinite;
+    z-index: 3000;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(105vh) rotate(360deg); }
+}
+
+/* Firefly Animation for Night Mode */
+.firefly {
+    position: fixed; width: 6px; height: 6px;
+    background-color: gold; border-radius: 50%;
+    box-shadow: 0 0 10px gold, 0 0 20px #ffffff;
+    pointer-events: none; z-index: 2000; opacity: 0;
+    animation: flyFirefly 4s infinite ease-in-out;
+    transition: opacity 0.5s ease;
+}
+
+@keyframes flyFirefly {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translate(calc(var(--rand-x) * 100px), calc(var(--rand-y) * -100px)); opacity: 0; }
+}
+
+/* Wizard Magical Swirl & Glow Effects */
+@keyframes magicalSwirl {
+    0% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+        filter: drop-shadow(0 0 5px #d4af37); 
+    }
+    50% { 
+        transform: scale(0) rotate(720deg); 
+        opacity: 0.1; 
+        filter: drop-shadow(0 0 30px #ffffff) drop-shadow(0 0 60px #d4af37); 
+    }
+    100% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+        filter: drop-shadow(0 0 5px #d4af37); 
+    }
+}
+
+.swirling {
+    animation: magicalSwirl 0.6s ease-in-out;
+}
+
+#wizard-img {
+    width: 100%; 
+    image-rendering: pixelated; 
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4));
+    transition: filter 0.3s ease;
+}
+
+#wizard-img:hover {
+    filter: drop-shadow(0 0 12px #d4af37);
+}
+#fullscreen-btn {
+    position: fixed; 
+    top: 20px; 
+    right: 130px; /* Neatly spaced next to the 75px theme button and 20px mute button */
+    background: rgba(30, 25, 20, 0.8);
+    border: 2px solid #d4af37; 
+    color: #d4af37;
+    padding: 10px; 
+    cursor: pointer; 
+    font-size: 1.2rem;
+    z-index: 3000; 
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#fullscreen-btn:hover { 
+    background: #d4af37; 
+    color: #2d2319; 
+}
+
+.journal.maximized {
+    width: 95vw !important;
+    height: 90vh !important;
+    max-width: none;
+    max-height: none;
+}
+
+.journal.maximized #display-area {
+    max-height: calc(90vh - 150px) !important;
+}

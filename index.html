@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcane Portfolio</title>
+    <link rel="stylesheet" href="agonzales.css">
+</head>
+<body>
+
+<button id="theme-btn">🌙</button>
+<button id="mute-btn">🔊</button>
+<button id="fullscreen-btn" title="Toggle Fullscreen">🗖</button>
+<div id="landing-screen">
+    <h1 class="landing-title"></h1>
+    <div class="landing-spacer"></div>
+    <button class="enter-btn" id="enter-btn">Enter Forest</button>
+</div>
+
+<!-- --- THE JOURNAL --- -->
+<div class="journal">
+    <nav class="nav-bar">
+        <button data-section="aboutme">ABOUT ME</button>
+        <button data-section="profile">PROFILE</button>
+        <button data-section="quests">QUESTS</button>
+        <button data-section="hobbies">HOBBIES</button>
+        <button data-section="contact">CONTACT</button>
+    </nav>
+
+    <div class="wizard-container" id="wizard-container">
+        <img id="wizard-img" src="pics/mc.png" alt="Wizard">
+    </div>
+
+    <div id="display-area">
+        <!-- Content injected here by JS -->
+    </div>
+    <div id="familiar">🦉</div>
+
+    <footer class="journal-footer">
+        &copy; 2026 The Arcane Archive | Aljomar O. Gonzales
+    </footer>
+</div>
+
+<!-- Music Player -->
+<div class="music-player">
+    <audio id="bg-music" loop>
+        <source src="pics/fbgmusic.mp3" type="audio/mpeg">
+    </audio>
+    <p class="music-label">Ambience: Terraria Forest</p>
+</div>
+
+<script src="agonzales.js"></script>
+</body>
+</html>
