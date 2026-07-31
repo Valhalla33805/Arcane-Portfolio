@@ -1,22 +1,58 @@
 const data = {
-    aboutme: `
-    <h2>ABOUT ME</h2>
-        <p class="text-base sm:text-lg text-gray-400 font-light leading-relaxed max-w-2xl font-sans">
-            I am Aljomar O. Gonzales, the programmer behind the <strong class="text-white font-medium">ALGORITHM</strong> matrix. As an IT Specialist and Frontend Engineer, I architect high-performance web solutions focused on responsive UI/UX, scalable client-side logic, and seamless database integration. I specialize in building data-driven applications that bridge complex backend structures with fluid, hardware-accelerated user interfaces.
-        </p>
+   aboutme: `
+        <div class="about-container">
+            <h2>ABOUT ME</h2>
+            <p class="about-intro-text">
+                I am Aljomar O. Gonzales, a Bachelor of Science in Information Technology (BSIT) student and the programmer behind the Algorithm Matrix. As an aspiring IT professional and frontend developer, I architect high-performance web solutions focused on responsive UI/UX, scalable client-side logic, and seamless database integration. I specialize in building data-driven applications that bridge complex backend structures with fluid, hardware-accelerated user interfaces. Through continuous learning and hands-on development, I strive to create efficient, reliable, and impactful digital experiences.
+            </p>
+
+            <h3 class="algorithm-heading">THE ALGORITHM BEHIND MY WORK</h3>
+            
+            <div class="algorithm-grid">
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Creative Problem Solving ▾</h4>
+                    <p class="algo-desc">I enjoy analyzing problems from different perspectives to create solutions that are both efficient and innovative.</p>
+                </div>
+
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Intentional Development ▾</h4>
+                    <p class="algo-desc">Every feature begins with careful planning to ensure it serves a clear purpose and improves the overall application.</p>
+                </div>
+
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Collaborative Innovation ▾</h4>
+                    <p class="algo-desc">I value teamwork and constructive feedback, believing that great ideas are built through collaboration.</p>
+                </div>
+
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Continuous Growth ▾</h4>
+                    <p class="algo-desc">I continuously learn new technologies and refine my skills to grow as a developer and adapt to industry trends.</p>
+                </div>
+
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Precision in Every Detail ▾</h4>
+                    <p class="algo-desc">From code structure to interface design, I pay close attention to detail to create polished and reliable applications.</p>
+                </div>
+
+                <div class="algorithm-card" onclick="toggleAlgo(this)">
+                    <h4>Building with Purpose ▾</h4>
+                    <p class="algo-desc">I strive to build applications that are intuitive, meaningful, and designed to deliver a great user experience.</p>
+                </div>
+            </div>
+        </div>
     `,
     profile: `
-        <h2>ALJOMAR O. GONZALES</h2>
+        <h2 class="algorithm-head">ALJOMAR O. GONZALES</h2>
         <p>Age: 21 | Born: Nov 17, 2004</p>
         <p>Location: Maasin City, Southern Leyte, PH</p>
         <hr>
         <p><em>"Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present. - Master Oogway"</em></p>
-        <h3>COLLEGE JOURNEY</h3>
+        <h3 class="algorithm-head">COLLEGE JOURNEY</h3>
         <p><strong>Cebu Institute of Technology - University (2023-2024|2024-2025)</strong><br>CHED Center of Excellence in IT Education.</p>
         <p><strong>College of Maasin (2024-2025|2025-2026|2026-2027)</strong><br>Private institution in Tunga-Tunga, Maasin, Southern Leyte.</p>
     `,
-    quests: `
-        <h2>COMPLETED QUESTS</h2>
+   quests: `
+        <h2 class="algorithm-head">COMPLETED QUESTS</h2>
         ${[
             { title: "Dairy Box Website", desc: "Interactive storefront for Pinoy MPC", url: "https://pinoycoop.github.io/DairyBox/" },
             { title: "TCM Queuing System", desc: "Cloud-based queue management for institutions", url: "https://valhalla33805.github.io/FinanceTest/" },
@@ -24,29 +60,29 @@ const data = {
             { title: "SmashHub: Arena Manager", desc: "Badminton court queueing and analytics hub", url: "https://valhalla33805.github.io/Queueing/" },
             { title: "Ethelora", desc: "Healthy Cafe", url: "https://valhalla33805.github.io/Ethelora-Web/" }
         ].map(q => `
-            <div style="background:rgba(0,0,0,0.2); padding:15px; margin-bottom:15px; border-left:4px solid #d4af37;">
-                <h3 style="margin:0; color:#d4af37;">${q.title}</h3>
-                <p style="font-size:0.9rem; margin:5px 0;">${q.desc}</p>
-                <a href="${q.url}" target="_blank" style="color:#a89154; text-decoration:none; font-weight:bold;">>> View Project</a>
+            <div class="quest-card">
+                <h3 class="quest-title">${q.title}</h3>
+                <p class="quest-desc">${q.desc}</p>
+                <a href="${q.url}" target="_blank" class="quest-link">>> View Project</a>
             </div>
         `).join('')}
     `,
     hobbies: `
-        <h2>GALLERY OF CONQUESTS</h2>
+        <h2 class="algorithm-head"> GALLERY OF CONQUESTS</h2>
         <p>Select an archive to view the spoils of war.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+        <div class="social-links-flex hobbies-buttons-container">
             <button onclick="openAlbum('TOURNAMENTS')" class="submit-btn">TOURNAMENTS</button>
             <button onclick="openAlbum('CESAFI')" class="submit-btn">CESAFI</button>
             <button onclick="openAlbum('CITU')" class="submit-btn">CIT-U</button>
             <button onclick="openAlbum('PRISAA')" class="submit-btn">PRISAA</button>
         </div>
-        <div id="album-display" style="border-top:1px solid #d4af37; padding-top:20px;">
+        <div id="album-display" class="album-display-container">
             <p>Click a category above to reveal your achievements.</p>
         </div>
     `,
     contact: `
         <div id="contact-content">
-            <h2>[ARCANE COMMUNIQUÉ]</h2>
+            <h2 class="algorithm-head"> [ARCANE COMMUNIQUÉ]</h2>
             <form id="ravenForm" action="https://formspree.io/f/xbdvrzew" method="POST">
                 <label>Seeker Identity (Name):</label>
                 <input type="text" name="name" required>
@@ -55,9 +91,17 @@ const data = {
                 <textarea name="message" placeholder="Type your scroll here..." rows="3" required></textarea>
                 <button type="submit" class="submit-btn">SEND RAVEN TO THE WIZARD</button>
             </form>
+
+            <div class="social-channels-container">
+                <p class="social-title">OTHER CHANNELS OF COMMUNICATION</p>
+                <div class="social-links-flex">
+                    <a href="https://www.facebook.com/share/1Bs64GjvT2/" target="_blank" class="submit-btn social-btn">📘 Facebook</a>
+                    <a href="https://instagram.com/aljomarr" target="_blank" class="submit-btn social-btn">📸 Instagram</a>
+                </div>
+            </div>
         </div>
     `
-};
+        }
 
 const albumData = {
     'TOURNAMENTS': [
@@ -88,11 +132,11 @@ function openAlbum(category) {
     const photos = albumData[category] || [];
     
     display.innerHTML = `<h3>${category} ARCHIVE</h3>` + photos.map(p => `
-        <div style="margin-bottom:20px; background:rgba(0,0,0,0.4); padding:10px; border-left:3px solid #d4af37;">
+        <div class="album-card">
             <a href="${p.src}" target="_blank">
-                <img src="${p.src}" style="width:100%; max-height:200px; object-fit:contain; cursor:pointer;">
+                <img src="${p.src}" class="album-img">
             </a>
-            <p style="font-size:0.9rem; margin-top:10px; color:#e0d8c3;">${p.desc}</p>
+            <p class="album-desc">${p.desc}</p>
         </div>
     `).join('');
 }
@@ -154,7 +198,7 @@ async function sendRaven(event) {
     const formData = new FormData(form);
     
     document.getElementById('contact-content').innerHTML = `
-        <h2 style="color:#d4af37;">DISPATCHING RAVEN...</h2>
+        <h2 class="dispatch-title">DISPATCHING RAVEN...</h2>
     `;
 
     try {
@@ -166,10 +210,10 @@ async function sendRaven(event) {
 
         if (response.ok) {
             document.getElementById('contact-content').innerHTML = `
-                <div style="text-align:center; padding-top:50px;">
-                    <div style="font-size:50px; animation: flyAway 2s forwards;">🐦‍⬛✉️</div>
-                    <h2 style="color:#d4af37;">RAVEN DISPATCHED!</h2>
-                    <p style="color:#e0d8c3; margin-bottom:20px;">The Wizard has received your message.</p>
+                <div class="dispatch-success-container">
+                    <div class="dispatch-icon">🐦‍⬛✉️</div>
+                    <h2 class="dispatch-title">RAVEN DISPATCHED!</h2>
+                    <p class="dispatch-message">The Wizard has received your message.</p>
                     <button id="back-to-contact" class="submit-btn">GO BACK TO ARCANE COMMUNIQUÉ</button>
                 </div>
             `;
@@ -179,12 +223,11 @@ async function sendRaven(event) {
         }
     } catch (error) {
         document.getElementById('contact-content').innerHTML = `
-            <h2 style="color:red;">THE RAVEN GOT LOST IN A STORM.</h2>
+            <h2 class="dispatch-error-title">THE RAVEN GOT LOST IN A STORM.</h2>
             <button onclick="location.reload()" class="submit-btn">TRY AGAIN</button>
         `;
     }
 }
-
 function createLeaves() {
     for (let i = 0; i < 20; i++) {
         const leaf = document.createElement('div');
@@ -306,4 +349,13 @@ function toggleFullscreen() {
         btn.innerHTML = '🗖'; 
         btn.title = "Toggle Fullscreen";
     }
+}
+function toggleAlgo(card) {
+    // Close other open cards if you want only one open at a time (optional)
+    document.querySelectorAll('.algorithm-card').forEach(c => {
+        if (c !== card) c.classList.remove('active');
+    });
+    
+    // Toggle current clicked card
+    card.classList.toggle('active');
 }
