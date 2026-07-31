@@ -63,6 +63,119 @@ body.night-mode .enter-btn:hover {
     color: #0f141e;
     box-shadow: 0 0 30px rgba(87, 144, 255, 0.9);
 }
+/* --- EXTENDED NIGHT MODE COLOR OVERRIDES --- */
+
+body.night-mode .quest-card {
+    border-left: 4px solid #5790ff;
+    background: rgba(15, 25, 45, 0.4);
+}
+
+body.night-mode .quest-title,
+body.night-mode .album-desc,
+body.night-mode .about-intro-text {
+    color: #c5d8ff !important;
+}
+
+body.night-mode .quest-link {
+    color: #8ab4f8;
+}
+
+body.night-mode .album-card {
+    border-left: 3px solid #5790ff;
+    background: rgba(15, 25, 45, 0.4);
+}
+/* --- FIX FOR ABOUT ME HEADING & LINE IN NIGHT MODE --- */
+body.night-mode #display-area h2 {
+    color: #5790ff !important;
+    text-shadow: 0 0 8px rgba(87, 144, 255, 0.6);
+}
+
+body.night-mode .algorithm-head {
+    color: #5790ff !important;
+    border-bottom: 1px solid rgba(87, 144, 255, 0.4) !important;
+}
+body.night-mode .algorithm-heading {
+    color: #5790ff !important;
+    border-bottom: 1px solid rgba(87, 144, 255, 0.4);
+}
+/* --- FIX FOR BOTTOM FOOTER LINE IN NIGHT MODE --- */
+body.night-mode .journal-footer {
+    border-top: 1px solid #5790ff !important;
+}
+/* --- FIX FOR WIZARD GLOW IN NIGHT MODE --- */
+body.night-mode #wizard-img {
+    filter: drop-shadow(0 0 8px rgba(87, 144, 255, 0.7)) !important;
+}
+
+body.night-mode #wizard-img:hover {
+    filter: drop-shadow(0 0 15px #5790ff) !important;
+}
+
+body.night-mode .algorithm-card {
+    background: rgba(15, 25, 45, 0.4);
+    border-left: 3px solid #5790ff;
+}
+
+body.night-mode .algorithm-card h4 {
+    color: #5790ff !important;
+}
+
+body.night-mode .algorithm-card p {
+    color: #a8c7fa !important;
+}
+
+body.night-mode .social-channels-container,
+body.night-mode .album-display-container {
+    border-top: 1px solid #5790ff;
+}
+
+body.night-mode .social-title {
+    color: #5790ff !important;
+}
+
+body.night-mode label {
+    color: #5790ff !important;
+}
+
+body.night-mode input[type="text"],
+body.night-mode input[type="email"],
+body.night-mode textarea {
+    background: rgba(10, 15, 25, 0.8);
+    border: 1px solid #5790ff;
+    color: #c5d8ff;
+}
+
+body.night-mode input[type="text"]:focus,
+body.night-mode input[type="email"]:focus,
+body.night-mode textarea:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgba(87, 144, 255, 0.8);
+}
+
+body.night-mode #fullscreen-btn,
+body.night-mode #mute-btn,
+body.night-mode #theme-btn,
+body.night-mode .music-player {
+    background: rgba(20, 35, 60, 0.9);
+    border: 2px solid #5790ff;
+    color: #5790ff;
+}
+
+body.night-mode #fullscreen-btn:hover,
+body.night-mode #mute-btn:hover,
+body.night-mode #theme-btn:hover {
+    background: #5790ff;
+    color: #0f141e;
+}
+
+body.night-mode .music-label {
+    color: #5790ff !important;
+}
+
+body.night-mode #display-area::-webkit-scrollbar-thumb {
+    background: #2b4c7e;
+    border: 1px solid #5790ff;
+}
 
 /* --- LANDING SCREEN STYLES --- */
 #landing-screen {
@@ -113,7 +226,7 @@ body.night-mode .enter-btn:hover {
 
 /* --- JOURNAL STYLES --- */
 .journal {
-    width: 850px; height: 550px;
+    width: 900px; height: 600px;
     background: rgba(30, 25, 20, 0.9);
     border: 8px ridge #4e342e;
     padding: 40px;
@@ -394,4 +507,224 @@ textarea:focus {
 
 .journal.maximized #display-area {
     max-height: calc(90vh - 150px) !important;
+}
+/* --- CONTACT SOCIALS & EXTRA STYLING --- */
+.social-channels-container {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #d4af37;
+    padding-top: 15px;
+}
+
+.social-title {
+    color: #d4af37;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.social-links-flex {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+}
+
+/* --- GENERIC CARD / DISPLAY STYLING TO REPLACE INLINE STYLES --- */
+.quest-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid #d4af37;
+}
+
+.quest-title {
+    margin: 0;
+    color: #d4af37;
+}
+
+.quest-desc {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.quest-link {
+    color: #a89154;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.album-card {
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-left: 3px solid #d4af37;
+}
+
+.album-img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.album-desc {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #e0d8c3;
+}
+/* --- FORM RESPONSE STATES --- */
+.dispatch-title {
+    color: #d4af37;
+}
+
+.dispatch-success-container {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.dispatch-icon {
+    font-size: 50px;
+    animation: flyAway 2s forwards;
+}
+
+.dispatch-message {
+    color: #e0d8c3;
+    margin-bottom: 20px;
+}
+
+.dispatch-error-title {
+    color: red;
+}
+.hobbies-buttons-container {
+    margin-bottom: 20px;
+}
+
+.album-display-container {
+    border-top: 1px solid #d4af37;
+    padding-top: 20px;
+}
+/* --- ABOUT ME SECTION STYLING --- */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 10px;
+}
+
+.about-intro-text {
+    font-size: 1rem;
+    color: #e0d8c3;
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+.algorithm-head {
+    color: #d4af37;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    padding-bottom: 1px;
+}
+.algorithm-heading {
+    color: #d4af37;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+    padding-bottom: 5px;
+}
+
+.algorithm-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* --- MAGICAL SPELL-REVEAL ACCORDION CARDS --- */
+.algorithm-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #d4af37;
+    padding: 12px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+.algorithm-card:hover {
+    background: rgba(212, 175, 55, 0.15);
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.algorithm-card h4 {
+    color: #d4af37;
+    margin: 0;
+    font-size: 0.95rem;
+    user-select: none;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Hidden spell text by default */
+.algorithm-card .algo-desc {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    color: #bfae88;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    filter: blur(4px); /* Magic blur effect before casting */
+    transform: translateY(-5px);
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, filter 0.4s ease-in-out, transform 0.4s ease-in-out, margin-top 0.3s ease;
+}
+
+/* Cast Spell / Active State */
+.algorithm-card.active {
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    border-left-width: 6px;
+}
+
+.algorithm-card.active .algo-desc {
+    max-height: 150px;
+    opacity: 1;
+    filter: blur(0px); /* Clear the magic blur */
+    transform: translateY(0);
+    margin-top: 10px;
+}
+
+/* --- NIGHT MODE MAGIC OVERRIDES --- */
+body.night-mode .algorithm-card {
+    border-left: 3px solid #5790ff;
+    background: rgba(15, 25, 45, 0.5);
+}
+
+body.night-mode .algorithm-card:hover {
+    background: rgba(87, 144, 255, 0.2);
+    box-shadow: 0 0 15px rgba(87, 144, 255, 0.4);
+}
+
+body.night-mode .algorithm-card h4 {
+    color: #5790ff !important;
+    text-shadow: 0 0 8px rgba(87, 144, 255, 0.6);
+}
+
+body.night-mode .algorithm-card.active {
+    background: rgba(87, 144, 255, 0.25);
+    box-shadow: 0 0 25px rgba(87, 144, 255, 0.7);
+    border-left-color: #ffffff;
+}
+
+body.night-mode .algorithm-card .algo-desc {
+    color: #c5d8ff !important;
+}
+.algorithm-card p {
+    color: #bfae88;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
